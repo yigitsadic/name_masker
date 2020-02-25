@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yiğit Sadıç"]
   spec.email         = ["yigitsadic@gmail.com"]
 
-  spec.summary       = %q{A name masker gem}
+  spec.summary       = %q{Gem for masking first name and last name}
   spec.description   = %q{Name Masker gem for personal needs.}
   spec.homepage      = "https://github.com/yigitsadic/name_masker"
 
@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "minitest", "~> 5.0"
+  spec.add_development_dependency 'minitest-emoji'
 end

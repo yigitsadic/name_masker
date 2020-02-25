@@ -6,17 +6,13 @@ Gem::Specification.new do |spec|
   spec.name          = "name_masker"
   spec.version       = NameMasker::VERSION
   spec.authors       = ["Yiğit Sadıç"]
-  spec.email         = ["yigit.sadic@globalmiles.com"]
+  spec.email         = ["yigitsadic@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.summary       = %q{A name masker gem}
+  spec.description   = %q{Name Masker gem for personal needs.}
+  spec.homepage      = "https://github.com/yigitsadic/name_masker"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

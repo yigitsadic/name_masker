@@ -36,4 +36,8 @@ module NameMasker
 
     [masked_part, visible_part].join
   end
+
+  def self.mask(first_name, last_name)
+    [mask_first_name(first_name), ' ', mask_last_name(last_name)].join
+  end
 end

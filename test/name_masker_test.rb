@@ -38,4 +38,20 @@ class NameMaskerTest < Minitest::Test
       assert_equal expected_results[index], ::NameMasker.mask_last_name(name)
     end
   end
+
+  def test_it_has_mask_method
+    assert ::NameMasker.respond_to?(:mask)
+  end
+
+  def test_it_should_mask_as_expected
+    names = ['Ali Moustapha', 'Lonnie Koch', 'Kandis Moen', 'Misha Durgan',
+             'M Good', 'Huey W', 'Donnell Anderson']
+    expected = ['Al* ***ha', 'Lo*** **ch', 'Ka*** **en', 'Mi*** ***an',
+                '* **od', 'Hu** *', 'Do*** ***on']
+
+    names.each_with_index do |full_name, index|
+      first_name, last_name = full_name.split(' ')
+      assert_equal expected[index], ::NameMasker.mask(first_name, last_name)
+    end
+  end
 end

@@ -21,4 +21,21 @@ class NameMaskerTest < Minitest::Test
       assert_equal expected_results[index], ::NameMasker.mask_first_name(name)
     end
   end
+
+  def test_it_has_mask_last_name_method
+    assert ::NameMasker.respond_to?(:mask_last_name)
+  end
+
+  def test_it_masks_empty_last_name_correctly
+    assert_equal '*', ::NameMasker.mask_last_name('')
+  end
+
+  def test_is_masks_last_name_correctly
+    names = %w[Al Doe Koch Maggio Swaniawski]
+    expected_results = %w[*l **e **ch ***io ***ki]
+
+    names.each_with_index do |name, index|
+      assert_equal expected_results[index], ::NameMasker.mask_last_name(name)
+    end
+  end
 end

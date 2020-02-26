@@ -68,4 +68,18 @@ class NameMaskerTest < Minitest::Test
                    ::NameMasker.mask_phone_number(*full_gsm)
     end
   end
+
+  def test_it_has_mask_email_method
+    emails = ["claris@prosaccorath.info", "clarence.schuster@heidenreich.co",
+              "sadie@casperoberbrunner.co", "malisa_blanda@harris.io"]
+    expected_result = ['*l***@p***', '*l***@h***', '*a***@c***', '*a***@h***']
+
+    emails.each_with_index do |email, index|
+      assert_equal expected_result[index], ::NameMasker.mask_email(email)
+    end
+  end
+
+  def test_is_masks_all_content_of_email_if_not_at_present
+    assert_equal '***', ::NameMasker.mask_email('loremipsum.com')
+  end
 end

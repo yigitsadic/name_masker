@@ -48,4 +48,12 @@ module NameMasker
      gsm[-2..-1]
     ].join
   end
+
+  def self.mask_email(email)
+    return '***' unless email.include?('@')
+
+    index_of_at = email.index('@')
+
+    ['*', email[1], '***', email[index_of_at..index_of_at+1], '***'].join
+  end
 end

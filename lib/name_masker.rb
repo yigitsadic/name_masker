@@ -40,4 +40,12 @@ module NameMasker
   def self.mask(first_name, last_name)
     [mask_first_name(first_name), ' ', mask_last_name(last_name)].join
   end
+
+  def self.mask_phone_number(country_code, gsm)
+    ['+', country_code,
+     gsm[0],
+     (Array.new(gsm.length - 3) { '*' }).join,
+     gsm[-2..-1]
+    ].join
+  end
 end

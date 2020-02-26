@@ -54,4 +54,18 @@ class NameMaskerTest < Minitest::Test
       assert_equal expected[index], ::NameMasker.mask(first_name, last_name)
     end
   end
+
+  def test_it_has_mask_phone_number_method
+    assert ::NameMasker.respond_to?(:mask_phone_number)
+  end
+
+  def test_it_should_mask_phone_number_correctly
+    phone_numbers = [['90', '5555555555'], ['1', '2025550132']]
+    expected_result = ['+905*******55', '+12*******32']
+
+    phone_numbers.each_with_index do |full_gsm, index|
+      assert_equal expected_result[index],
+                   ::NameMasker.mask_phone_number(*full_gsm)
+    end
+  end
 end
